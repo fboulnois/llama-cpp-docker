@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  llama:
+    image: llama-cpp-docker
+    environment:
+      - CTX_SIZE=2048
+      - GGML_CUDA_NO_PINNED=1
+      - GPU_LAYERS=99
+      - LLAMA_MODEL=llama-2-13b-chat.Q5_K_M.gguf
+    volumes:
+      - ./models:/models
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - target: 8080
+        published: 8080
+        mode: host
