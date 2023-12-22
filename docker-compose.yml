@@ -3,10 +3,10 @@ services:
   llama:
     image: llama-cpp-docker
     environment:
-      - CTX_SIZE=2048
       - GGML_CUDA_NO_PINNED=1
-      - GPU_LAYERS=99
-      - LLAMA_MODEL=llama-2-13b-chat.Q5_K_M.gguf
+      - LLAMA_CTX_SIZE=2048
+      - LLAMA_MODEL=/models/llama-2-13b-chat.Q5_K_M.gguf
+      - LLAMA_N_GPU_LAYERS=99
     volumes:
       - ./models:/models
     deploy:
