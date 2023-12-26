@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  llama:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

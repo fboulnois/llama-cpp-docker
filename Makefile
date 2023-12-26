@@ -1,11 +1,13 @@
 DOCKER := $(if $(shell docker ps >/dev/null 2>&1 && echo ok), docker, sudo docker)
 DIRNAME := $(notdir $(CURDIR))
+HAS_NVIDIA_GPU := $(shell nvidia-smi --query --display=COMPUTE && echo ok)
 
 build:
+ifdef HAS_NVIDIA_GPU
 	$(DOCKER) build . --tag $(DIRNAME)
-
-build-cpu:
+else
 	$(DOCKER) build . --file Dockerfile-cpu --tag $(DIRNAME)
+endif
 
 llama-13b:
 	cd models \
@@ -23,7 +25,11 @@ solar-10b:
 		&& echo "4ade240f5dcc253272158f3659a56f5b1da8405510707476d23a7df943aa35f7  solar-10.7b-instruct-v1.0.Q5_K_M.gguf" | sha256sum -c -
 
 up:
-	$(DOCKER) compose up
+ifdef HAS_NVIDIA_GPU
+	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
+else
+	$(DOCKER) compose -f docker-compose.yml up
+endif
 
 down:
 	$(DOCKER) compose down

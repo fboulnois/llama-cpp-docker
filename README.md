@@ -6,12 +6,13 @@ Docker container.
 ## Minimum requirements
 
 By default, the service requires a CUDA capable GPU with at least 8GB+ of VRAM. 
-If you don't have an Nvidia GPU, use `make build-cpu` instead of `make build`.
+If you don't have an Nvidia GPU with CUDA then the CPU version will be built and
+used instead.
 
 ## Quickstart
 
 ```bash
-make build # or make build-cpu
+make build
 make llama-13b
 make up
 ```
