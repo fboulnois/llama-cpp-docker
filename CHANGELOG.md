@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.3.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.2.0...v1.3.0) - 2023-12-27
+
+### Fixed
+
+* Ensure build stages are named
+
 ## [v1.2.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.1.0...v1.2.0) - 2023-12-25
 
 ### Added
