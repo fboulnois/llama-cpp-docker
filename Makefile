@@ -1,4 +1,5 @@
-DOCKER := $(if $(shell docker ps >/dev/null 2>&1 && echo ok), docker, sudo docker)
+USE_SUDO := $(shell which docker >/dev/null && docker ps 2>&1 | grep -q "permission denied" && echo sudo)
+DOCKER := $(if $(USE_SUDO), sudo docker, docker)
 DIRNAME := $(notdir $(CURDIR))
 HAS_NVIDIA_GPU := $(shell nvidia-smi --query --display=COMPUTE && echo ok)
 
