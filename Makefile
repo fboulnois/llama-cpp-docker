@@ -10,7 +10,7 @@ else
 	$(DOCKER) build . --file Dockerfile-cpu --tag $(DIRNAME)
 endif
 
-llama-13b:
+llama-2-13b:
 	cd models \
 		&& curl -LO https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf \
 		&& echo "ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a  llama-2-13b-chat.Q5_K_M.gguf" | sha256sum -c -
