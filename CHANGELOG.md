@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.3.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.2.1...v1.3.0) - 2024-01-03
+
+### Added
+
+* Improve docker sudo detection in Makefile
+
+### Changed
+
+* Move download to docker-entrypoint.sh
+
+### Fixed
+
+* Rename target to llama 2 to match download
+
 ## [v1.2.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.2.0...v1.2.1) - 2023-12-27
 
 ### Fixed
