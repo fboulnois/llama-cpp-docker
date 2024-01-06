@@ -41,8 +41,8 @@ default, these will download the `_Q5_K_M.gguf` versions of the models. These
 models are quantized to 5 bits which provide a good balance between speed and
 accuracy.
 
-| Model | Model Size | (V)RAM Required | [~Score](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) |
-| --- | --- | --- | --- |
-| [`llama-2-13b-chat`](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) | 13B | 11.73 GB | 53.26 |
-| [`mistral-7b-instruct-v0.2`](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF) | 7B | 7.63 GB | 65.71 |
-| [`solar-10.7b-instruct-v1.0`](https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF) | 10.7B | 10.10 GB | 74.2 |
+| Target | Model | Model Size | (V)RAM Required | [~Score](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) |
+| --- | --- | --- | --- | --- |
+| llama-2-13b | [`llama-2-13b-chat`](https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF) | 13B | 11.73 GB | 53.26 |
+| mistral-7b | [`mistral-7b-instruct-v0.2`](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF) | 7B | 7.63 GB | 65.71 |
+| solar-10b | [`solar-10.7b-instruct-v1.0`](https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF) | 10.7B | 10.10 GB | 74.2 |
