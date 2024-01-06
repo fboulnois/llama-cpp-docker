@@ -20,9 +20,6 @@ COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 /usr/lib/x86_64-linux-gnu
 COPY --from=0 /srv/llama.cpp/main /usr/local/bin/llama
 COPY --from=0 /srv/llama.cpp/server /usr/local/bin/llama-server
 
-# copy entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-
 # create llama user and set home directory
 RUN useradd --system --create-home llama
 
@@ -31,5 +28,8 @@ USER llama
 WORKDIR /home/llama
 
 EXPOSE 8080
+
+# copy and set entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
