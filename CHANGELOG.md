@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.3.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.3.0...v1.3.1) - 2024-01-06
+
+### Changed
+
+* Move entrypoint to bottom of Dockerfile
+
+### Fixed
+
+* Suppress missing nvidia-smi command output
+
 ## [v1.3.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.2.1...v1.3.0) - 2024-01-03
 
 ### Added
