@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.4.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.3.1...v1.4.0) - 2024-03-05
+
+### Fixed
+
+* Use clang 16 instead of gcc in cpu version
+
 ## [v1.3.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.3.0...v1.3.1) - 2024-01-06
 
 ### Changed
