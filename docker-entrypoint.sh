@@ -16,8 +16,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "starling-7b" ]; then
         MODEL_URL="https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF/resolve/main/Starling-LM-7B-beta-Q5_K_M.gguf"
         MODEL_SHA256="c67b033bff47e7b8574491c6c296c094e819488d146aca1c6326c10257450b99"
+    elif [ "$1" = "command-r" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q5_K_M.gguf"
+        MODEL_SHA256="1a59aeb034b64e430d25bc9f2b29d9f2cc658af38670fae36226585603da8ecc"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r]"
         exit 1
     fi
     MODEL_NAME=$(basename "$MODEL_URL")
