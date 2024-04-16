@@ -13,8 +13,11 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "solar-10b" ]; then
         MODEL_URL="https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q5_K_M.gguf"
         MODEL_SHA256="4ade240f5dcc253272158f3659a56f5b1da8405510707476d23a7df943aa35f7"
+    elif [ "$1" = "starling-7b" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF/resolve/main/Starling-LM-7B-beta-Q5_K_M.gguf"
+        MODEL_SHA256="c67b033bff47e7b8574491c6c296c094e819488d146aca1c6326c10257450b99"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b]"
         exit 1
     fi
     MODEL_NAME=$(basename "$MODEL_URL")
