@@ -19,6 +19,12 @@ mistral-7b:
 solar-10b:
 	cd models && ../docker-entrypoint.sh $@
 
+starling-7b:
+	cd models && ../docker-entrypoint.sh $@
+
+command-r:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
