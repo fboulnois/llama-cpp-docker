@@ -47,4 +47,4 @@ accuracy.
 | solar-10b | [`solar-10.7b-instruct-v1.0`](https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF) | 10.7B | 10.10 GB | 74.2 | 1065 |
 | mistral-7b | [`mistral-7b-instruct-v0.2`](https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF) | 7B | 7.63 GB | 65.71 | 1074 |
 | starling-7b | [`starling-lm-7b-beta`](https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF) | 7B | 5.13 GB | 69.88 | 1118 |
-
+| command-r | [`c4ai-command-r-v01`](https://huggingface.co/bartowski/c4ai-command-r-v01-GGUF) | 35B | 25.00 GB | 68.54 | 1148 |
