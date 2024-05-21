@@ -25,6 +25,12 @@ starling-7b:
 command-r:
 	cd models && ../docker-entrypoint.sh $@
 
+llama-3-8b:
+	cd models && ../docker-entrypoint.sh $@
+
+phi-3-mini:
+	cd models && ../docker-entrypoint.sh $@
+
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
