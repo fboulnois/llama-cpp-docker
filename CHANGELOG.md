@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.6.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.5.1...v1.6.0) - 2024-05-20
+
+### Added
+
+* Add llama 3 8B and phi 3 mini
+
 ## [v1.5.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.5.0...v1.5.1) - 2024-04-15
 
 ### Fixed
