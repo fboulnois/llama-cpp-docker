@@ -19,8 +19,14 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "command-r" ]; then
         MODEL_URL="https://huggingface.co/bartowski/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q5_K_M.gguf"
         MODEL_SHA256="1a59aeb034b64e430d25bc9f2b29d9f2cc658af38670fae36226585603da8ecc"
+    elif [ "$1" = "llama-3-8b" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf"
+        MODEL_SHA256="16d824ee771e0e33b762bb3dc3232b972ac8dce4d2d449128fca5081962a1a9e"
+    elif [ "$1" = "phi-3-mini" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q6_K.gguf"
+        MODEL_SHA256="597a483b0e56360cb488d3f8a5ec0fd2c3a3eb44da7bb69020b79ba7c1f6ce85"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini]"
         exit 1
     fi
     MODEL_NAME=$(basename "$MODEL_URL")
