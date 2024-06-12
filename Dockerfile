@@ -3,7 +3,7 @@ FROM nvidia/cuda:12.5.0-devel-ubuntu22.04 AS env-build
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y build-essential git
+RUN apt-get update && apt-get install -y build-essential git libgomp1
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
@@ -11,10 +11,12 @@ RUN git clone https://github.com/ggerganov/llama.cpp.git \
 
 FROM debian:12-slim AS env-deploy
 
-# copy cuda libraries
-COPY --from=0 /usr/local/cuda/lib64/libcublas.so.12 /usr/lib/x86_64-linux-gnu
-COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.12 /usr/lib/x86_64-linux-gnu
-COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 /usr/lib/x86_64-linux-gnu
+# copy openmp and cuda libraries
+ENV LD_LIBRARY_PATH=/usr/local/lib
+COPY --from=0 /usr/lib/x86_64-linux-gnu/libgomp.so.1 ${LD_LIBRARY_PATH}/libgomp.so.1
+COPY --from=0 /usr/local/cuda/lib64/libcublas.so.12 ${LD_LIBRARY_PATH}/libcublas.so.12
+COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.12 ${LD_LIBRARY_PATH}/libcublasLt.so.12
+COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 ${LD_LIBRARY_PATH}/libcudart.so.12
 
 # copy llama.cpp binaries
 COPY --from=0 /srv/llama.cpp/main /usr/local/bin/llama
