@@ -10,6 +10,7 @@ RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && make -j LLAMA_CUBLAS=1 CUDA_DOCKER_ARCH=all
 
 FROM debian:12-slim AS env-deploy
+RUN apt-get update && apt-get install -y libgomp1
 
 # copy cuda libraries
 COPY --from=0 /usr/local/cuda/lib64/libcublas.so.12 /usr/lib/x86_64-linux-gnu

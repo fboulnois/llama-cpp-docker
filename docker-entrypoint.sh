@@ -25,8 +25,12 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "phi-3-mini" ]; then
         MODEL_URL="https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q6_K.gguf"
         MODEL_SHA256="597a483b0e56360cb488d3f8a5ec0fd2c3a3eb44da7bb69020b79ba7c1f6ce85"
+    elif [ "$1" = "L3-8B-Stheno" ]; then
+        MODEL_URL="https://huggingface.co/Lewdiculous/L3-8B-Stheno-v3.2-GGUF-IQ-Imatrix/resolve/main/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf"
+        MODEL_SHA256="a0c8810471e2ac1bc205c2e777ab1c3e369273321e7f7d5d27223cd2564d9a59"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|L3-8B-Stheno]"
+
         exit 1
     fi
     MODEL_NAME=$(basename "$MODEL_URL")
