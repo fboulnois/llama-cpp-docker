@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.7.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.6.1...v1.7.0) - 2024-06-12
+
+### Added
+
+* Update nvidia/cuda to 12.5.0
+
+### Fixed
+
+* Add libomp to clang build
+* Add libgomp to cuda build
+* LLAMA_CUBLAS is deprecated
+
 ## [v1.6.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.6.0...v1.6.1) - 2024-05-21
 
 ### Fixed
