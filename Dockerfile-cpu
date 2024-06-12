@@ -3,13 +3,17 @@ FROM debian:12-slim AS env-build
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y make git clang-16
+RUN apt-get update && apt-get install -y make git clang-16 libomp-16-dev
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
   && make -j CC=clang-16 CXX=clang++-16
 
 FROM debian:12-slim AS env-deploy
+
+# copy openmp libraries
+ENV LD_LIBRARY_PATH=/usr/local/lib
+COPY --from=0 /usr/lib/llvm-16/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
 
 # copy llama.cpp binaries
 COPY --from=0 /srv/llama.cpp/main /usr/local/bin/llama
