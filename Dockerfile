@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y build-essential git
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && make -j LLAMA_CUBLAS=1 CUDA_DOCKER_ARCH=all
+  && make -j LLAMA_CUDA=1 CUDA_DOCKER_ARCH=all
 
 FROM debian:12-slim AS env-deploy
 
