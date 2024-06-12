@@ -1,15 +1,47 @@
 version: "3.9"
 services:
-  llama:
+  llama1:
     image: llama-cpp-docker
+    name: llama1
     environment:
       - GGML_CUDA_NO_PINNED=1
+      - CUDA_VISIBLE_DEVICES=0
       - LLAMA_CTX_SIZE=4096
-      - LLAMA_MODEL=/models/llama-2-13b-chat.Q5_K_M.gguf
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
       - LLAMA_N_GPU_LAYERS=99
     volumes:
       - ./models:/models
     ports:
       - target: 8080
         published: 8080
+        mode: host
+  llama2:
+    image: llama-cpp-docker
+    name: llama2
+    environment:
+      - GGML_CUDA_NO_PINNED=1
+      - CUDA_VISIBLE_DEVICES=1
+      - LLAMA_CTX_SIZE=4096
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_N_GPU_LAYERS=99
+    volumes:
+      - ./models:/models
+    ports:
+      - target: 8081
+        published: 8081
+        mode: host
+  llama3:
+    image: llama-cpp-docker
+    name: llama3
+    environment:
+      - GGML_CUDA_NO_PINNED=1
+      - CUDA_VISIBLE_DEVICES=2
+      - LLAMA_CTX_SIZE=4096
+      - LLAMA_MODEL=/models/L3-8B-Stheno-v3.2-Q5_K_M-imat.gguf
+      - LLAMA_N_GPU_LAYERS=99
+    volumes:
+      - ./models:/models
+    ports:
+      - target: 8081
+        published: 8081
         mode: host
