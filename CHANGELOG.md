@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.7.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.7.0...v1.7.1) - 2024-06-13
+
+### Fixed
+
+* Copy over new binary names
+
 ## [v1.7.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.6.1...v1.7.0) - 2024-06-12
 
 ### Added
