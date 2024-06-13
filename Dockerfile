@@ -19,8 +19,8 @@ COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.12 ${LD_LIBRARY_PATH}/libcubl
 COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 ${LD_LIBRARY_PATH}/libcudart.so.12
 
 # copy llama.cpp binaries
-COPY --from=0 /srv/llama.cpp/main /usr/local/bin/llama
-COPY --from=0 /srv/llama.cpp/server /usr/local/bin/llama-server
+COPY --from=0 /srv/llama.cpp/llama-cli /usr/local/bin/llama-cli
+COPY --from=0 /srv/llama.cpp/llama-server /usr/local/bin/llama-server
 
 # create llama user and set home directory
 RUN useradd --system --create-home llama
