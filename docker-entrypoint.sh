@@ -25,8 +25,17 @@ if [ "$#" -eq 1 ]; then
     elif [ "$1" = "phi-3-mini" ]; then
         MODEL_URL="https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q6_K.gguf"
         MODEL_SHA256="597a483b0e56360cb488d3f8a5ec0fd2c3a3eb44da7bb69020b79ba7c1f6ce85"
+    elif [ "$1" = "phi-3-medium" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/Phi-3-medium-4k-instruct-GGUF/resolve/main/Phi-3-medium-4k-instruct-Q5_K_M.gguf"
+        MODEL_SHA256="5e9d850d6c899e7fdf39a19cdf6fecae225e0c5bb3d13d6f277cbda508a15f0c"
+    elif [ "$1" = "gemma-2-9b" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q5_K_M.gguf"
+        MODEL_SHA256="a4b0b55ce809a09baaefb789b0046ac77ecd502aba8aeb2ed63cc237d9f40ce7"
+    elif [ "$1" = "gemma-2-27b" ]; then
+        MODEL_URL="https://huggingface.co/bartowski/gemma-2-27b-it-GGUF/resolve/main/gemma-2-27b-it-Q5_K_M.gguf"
+        MODEL_SHA256="fbefa7ddf24b32dee231c40e0bdd55f9a3ef0e64c8559b0cb48b66cce66fe671"
     else
-        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini]"
+        echo "$0 [llama-2-13b|mistral-7b|solar-10b|starling-7b|command-r|llama-3-8b|phi-3-mini|phi-3-medium|gemma-2-9b|gemma-2-27b]"
         exit 1
     fi
     MODEL_NAME=$(basename "$MODEL_URL")
