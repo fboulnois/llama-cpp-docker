@@ -28,6 +28,9 @@ command-r:
 llama-3-8b:
 	cd models && ../docker-entrypoint.sh $@
 
+llama-3.1-8b:
+	cd models && ../docker-entrypoint.sh $@
+
 phi-3-mini:
 	cd models && ../docker-entrypoint.sh $@
 
