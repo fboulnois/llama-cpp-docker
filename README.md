@@ -36,10 +36,9 @@ for the complete list of server options.
 
 ## Models
 
-The [Makefile](Makefile) has a few targets for downloading popular models. By
-default, these will download the `_Q5_K_M.gguf` versions of the models. These
-models are quantized to 5 bits which provide a good balance between speed and
-accuracy.
+The [Makefile](Makefile) has targets for downloading popular models. By default,
+these will download the `_Q5_K_M.gguf` versions of the models. These models are
+quantized to 5 bits which provide a good balance between speed and accuracy.
 
 | Target | Model | Model Size | (V)RAM Required | [~Score](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
