@@ -18,48 +18,55 @@ gemma-2-27b fbefa7ddf24b32dee231c40e0bdd55f9a3ef0e64c8559b0cb48b66cce66fe671 htt
 EOF
 )
 
-# download model if specified as argument and exit
-if [ "$#" -eq 1 ]; then
-    MODEL_LINE=$(echo "$MODEL_LIST" | grep "$1" || true)
+parse_args_download_model() {
+    if [ "$#" -eq 1 ]; then
+        MODEL_LINE=$(echo "$MODEL_LIST" | grep "$1" || true)
 
-    if [ -z "$MODEL_LINE" ]; then
-        echo "$MODEL_LIST" | awk '{print $1}' | tr '\n' '|' | sed 's/|$//' | xargs printf "$0 [%s]\n"
-        exit 1
+        if [ -z "$MODEL_LINE" ]; then
+            echo "$MODEL_LIST" | awk '{print $1}' | tr '\n' '|' | sed 's/|$//' | xargs printf "$0 [%s]\n"
+            exit 1
+        fi
+
+        MODEL_SHA256=$(echo "$MODEL_LINE" | awk '{print $2}')
+        MODEL_URL=$(echo "$MODEL_LINE" | awk '{print $3}')
+        MODEL_NAME=$(basename "$MODEL_URL")
+
+        curl -LO "$MODEL_URL"
+        echo "$MODEL_SHA256  $MODEL_NAME" | sha256sum -c -
+        exit 0
     fi
+}
 
-    MODEL_SHA256=$(echo "$MODEL_LINE" | awk '{print $2}')
-    MODEL_URL=$(echo "$MODEL_LINE" | awk '{print $3}')
-    MODEL_NAME=$(basename "$MODEL_URL")
+set_default_env_vars() {
+    if [ -z ${LLAMA_HOST+x} ]; then
+        export LLAMA_HOST="0.0.0.0"
+    fi
+    if [ -z ${LLAMA_MODEL+x} ]; then
+        export LLAMA_MODEL="/models/llama-2-13b-chat.Q5_K_M.gguf"
+    fi
+}
 
-    curl -LO "$MODEL_URL"
-    echo "$MODEL_SHA256  $MODEL_NAME" | sha256sum -c -
-    exit 0
-fi
+convert_llama_env_vars() {
+    LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
+        # for each environment variable
+        for (n = 1; n <= NF; n++) {
+            # replace LLAMA_ prefix with --
+            sub("^LLAMA_", "--", $n)
+            # find first = and split into argument name and value
+            eq = index($n, "=")
+            s1 = tolower(substr($n, 1, eq - 1))
+            s2 = substr($n, eq + 1)
+            # replace _ with - in argument name
+            gsub("_", "-", s1)
+            # print argument name and value
+            print s1 " " s2
+        }
+    }')
+}
 
-# set default environment variables if not set
-if [ -z ${LLAMA_HOST+x} ]; then
-    export LLAMA_HOST="0.0.0.0"
-fi
-if [ -z ${LLAMA_MODEL+x} ]; then
-    export LLAMA_MODEL="/models/llama-2-13b-chat.Q5_K_M.gguf"
-fi
-
-# convert LLAMA_ environment variables to llama-server arguments
-LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
-    # for each environment variable
-    for (n = 1; n <= NF; n++) {
-        # replace LLAMA_ prefix with --
-        sub("^LLAMA_", "--", $n)
-        # find first = and split into argument name and value
-        eq = index($n, "=")
-        s1 = tolower(substr($n, 1, eq - 1))
-        s2 = substr($n, eq + 1)
-        # replace _ with - in argument name
-        gsub("_", "-", s1)
-        # print argument name and value
-        print s1 " " s2
-    }
-}')
+parse_args_download_model "$@"
+set_default_env_vars
+convert_llama_env_vars
 
 set -x
 llama-server $LLAMA_ARGS
