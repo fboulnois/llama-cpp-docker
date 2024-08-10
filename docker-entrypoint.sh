@@ -18,12 +18,27 @@ gemma-2-27b fbefa7ddf24b32dee231c40e0bdd55f9a3ef0e64c8559b0cb48b66cce66fe671 htt
 EOF
 )
 
+usage() {
+    MODEL_NAMES=$(echo "$MODEL_LIST" | awk '{print "  " $1}')
+    cat << EOF
+Usage: $0 [MODEL]...
+Run llama-server or download a model and exit
+
+If no MODEL is provided, run llama-server with default settings.
+
+Available models to download:
+
+$MODEL_NAMES
+
+EOF
+}
+
 parse_args_download_model() {
-    if [ "$#" -eq 1 ]; then
+    if [ "$#" -ge 1 ]; then
         MODEL_LINE=$(echo "$MODEL_LIST" | grep "$1" || true)
 
-        if [ -z "$MODEL_LINE" ]; then
-            echo "$MODEL_LIST" | awk '{print $1}' | tr '\n' '|' | sed 's/|$//' | xargs printf "$0 [%s]\n"
+        if [ "$1" = "--help" ] || [ -z "$MODEL_LINE" ]; then
+            usage
             exit 1
         fi
 
