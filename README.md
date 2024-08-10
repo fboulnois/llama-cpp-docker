@@ -36,9 +36,12 @@ for the complete list of server options.
 
 ## Models
 
-The [Makefile](Makefile) has targets for downloading popular models. By default,
-these will download the `_Q5_K_M.gguf` versions of the models. These models are
-quantized to 5 bits which provide a good balance between speed and accuracy.
+The [`docker-entrypoint.sh`](docker-entrypoint.sh) has targets for downloading
+popular models. Run `./docker-entrypoint.sh --help` to list available models.
+Download models by running `./docker-entrypoint.sh <model>` or `make <model>`
+where `<model>` is the name of the model. By default, these will download the
+`_Q5_K_M.gguf` versions of the models. These models are quantized to 5 bits
+which provide a good balance between speed and accuracy.
 
 | Target | Model | Model Size | (V)RAM Required | [~Score](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
