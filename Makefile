@@ -10,39 +10,6 @@ else
 	$(DOCKER) build . --file Dockerfile-cpu --tag $(DIRNAME)
 endif
 
-llama-2-13b:
-	cd models && ../docker-entrypoint.sh $@
-
-mistral-7b:
-	cd models && ../docker-entrypoint.sh $@
-
-solar-10b:
-	cd models && ../docker-entrypoint.sh $@
-
-starling-7b:
-	cd models && ../docker-entrypoint.sh $@
-
-command-r:
-	cd models && ../docker-entrypoint.sh $@
-
-llama-3-8b:
-	cd models && ../docker-entrypoint.sh $@
-
-llama-3.1-8b:
-	cd models && ../docker-entrypoint.sh $@
-
-phi-3-mini:
-	cd models && ../docker-entrypoint.sh $@
-
-phi-3-medium:
-	cd models && ../docker-entrypoint.sh $@
-
-gemma-2-9b:
-	cd models && ../docker-entrypoint.sh $@
-
-gemma-2-27b:
-	cd models && ../docker-entrypoint.sh $@
-
 up:
 ifdef HAS_NVIDIA_GPU
 	$(DOCKER) compose -f docker-compose.yml -f docker-compose.gpu.yml up
@@ -52,3 +19,6 @@ endif
 
 down:
 	$(DOCKER) compose down
+
+%:
+	cd models && ../docker-entrypoint.sh $@
