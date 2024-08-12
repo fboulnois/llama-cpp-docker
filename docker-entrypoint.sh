@@ -9,8 +9,7 @@ mistral-7b b85cdd596ddd76f3194047b9108a73c74d77ba04bef49255a50fc0cfbda83d32 http
 solar-10b 4ade240f5dcc253272158f3659a56f5b1da8405510707476d23a7df943aa35f7 https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q5_K_M.gguf
 starling-7b c67b033bff47e7b8574491c6c296c094e819488d146aca1c6326c10257450b99 https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF/resolve/main/Starling-LM-7B-beta-Q5_K_M.gguf
 command-r 1a59aeb034b64e430d25bc9f2b29d9f2cc658af38670fae36226585603da8ecc https://huggingface.co/bartowski/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q5_K_M.gguf
-llama-3-8b 16d824ee771e0e33b762bb3dc3232b972ac8dce4d2d449128fca5081962a1a9e https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF/resolve/main/Meta-Llama-3-8B-Instruct-Q5_K_M.gguf
-llama-3.1-8b 14e10feba0c82a55da198dcd69d137206ad22d116a809926d27fa5f2398c69c7 https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
+llama-3-8b 14e10feba0c82a55da198dcd69d137206ad22d116a809926d27fa5f2398c69c7 https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
 phi-3-mini 597a483b0e56360cb488d3f8a5ec0fd2c3a3eb44da7bb69020b79ba7c1f6ce85 https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF/resolve/main/Phi-3-mini-4k-instruct-Q6_K.gguf
 phi-3-medium 5e9d850d6c899e7fdf39a19cdf6fecae225e0c5bb3d13d6f277cbda508a15f0c https://huggingface.co/bartowski/Phi-3-medium-4k-instruct-GGUF/resolve/main/Phi-3-medium-4k-instruct-Q5_K_M.gguf
 gemma-2-9b a4b0b55ce809a09baaefb789b0046ac77ecd502aba8aeb2ed63cc237d9f40ce7 https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q5_K_M.gguf
