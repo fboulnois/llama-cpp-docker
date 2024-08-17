@@ -1,5 +1,21 @@
 # Changelog
 
+## [v1.8.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.7.1...v1.8.0) - 2024-08-11
+
+### Added
+
+* Set llama 3.1 as default llama 3 target
+* Add more detailed command line usage
+* Add llama 3.1 8b model
+* Add phi 3 medium and gemma 2 9b and 27b
+* Update nvidia/cuda to 12.5.1
+
+### Changed
+
+* Add pattern rule to download models
+* Move shell into functions
+* Simplify adding new models
+
 ## [v1.7.1](https://github.com/fboulnois/llama-cpp-docker/compare/v1.7.0...v1.7.1) - 2024-06-13
 
 ### Fixed
