@@ -3,11 +3,12 @@ FROM nvidia/cuda:12.6.3-devel-ubuntu22.04 AS env-build
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y build-essential git libgomp1
+RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && make -j LLAMA_CUDA=1 CUDA_DOCKER_ARCH=all
+  && cmake -B build -DGGML_CUDA=on -DBUILD_SHARED_LIBS=off \
+  && cmake --build build --config Release -j
 
 FROM debian:12-slim AS env-deploy
 
@@ -19,8 +20,8 @@ COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.12 ${LD_LIBRARY_PATH}/libcubl
 COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 ${LD_LIBRARY_PATH}/libcudart.so.12
 
 # copy llama.cpp binaries
-COPY --from=0 /srv/llama.cpp/llama-cli /usr/local/bin/llama-cli
-COPY --from=0 /srv/llama.cpp/llama-server /usr/local/bin/llama-server
+COPY --from=0 /srv/llama.cpp/build/bin/llama-cli /usr/local/bin/llama-cli
+COPY --from=0 /srv/llama.cpp/build/bin/llama-server /usr/local/bin/llama-server
 
 # create llama user and set home directory
 RUN useradd --system --create-home llama
