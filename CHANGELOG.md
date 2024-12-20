@@ -1,6 +1,16 @@
 # Changelog
 
-## [v1.8.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.7.1...v1.8.0) - 2024-08-11
+## [v1.9.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.8.0...v1.9.0) - 2024-12-20
+
+### Added
+
+* Update nvidia/cuda to 12.6.3
+
+### Fixed
+
+* Switch to CMake as Makefile is deprecated
+
+## [v1.8.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.7.1...v1.8.0) - 2024-08-17
 
 ### Added
 
