@@ -5,7 +5,7 @@ set -eu
 # model target, sha256 hash, and url
 MODEL_LIST=$(cat << EOF
 llama-2-13b ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf
-mistral-7b b85cdd596ddd76f3194047b9108a73c74d77ba04bef49255a50fc0cfbda83d32 https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.2-GGUF/resolve/main/mistral-7b-instruct-v0.2.Q5_K_M.gguf
+mistral-7b 0374072546aaf1257d1e34610edb11b691730d8ef7d44b5629693a2dd8e8d472 https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q5_K_M.gguf
 solar-10b 4ade240f5dcc253272158f3659a56f5b1da8405510707476d23a7df943aa35f7 https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q5_K_M.gguf
 starling-7b c67b033bff47e7b8574491c6c296c094e819488d146aca1c6326c10257450b99 https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF/resolve/main/Starling-LM-7B-beta-Q5_K_M.gguf
 command-r 1a59aeb034b64e430d25bc9f2b29d9f2cc658af38670fae36226585603da8ecc https://huggingface.co/bartowski/c4ai-command-r-v01-GGUF/resolve/main/c4ai-command-r-v01-Q5_K_M.gguf
