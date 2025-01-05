@@ -23,7 +23,7 @@ EOF
 )
 
 usage() {
-  MODEL_NAMES=$(echo "$MODEL_LIST" | awk '{print "  " $1}')
+  MODEL_NAMES=$(echo "$MODEL_LIST" | awk '{print "  " $1}' | sort)
   cat << EOF
 Usage: $0 [MODEL]...
 Run llama-server or download a model and exit
