@@ -7,6 +7,7 @@ MODEL_LIST=$(cat << EOF
 llama-2-13b ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf
 mistral-7b 0374072546aaf1257d1e34610edb11b691730d8ef7d44b5629693a2dd8e8d472 https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF/resolve/main/Mistral-7B-Instruct-v0.3-Q5_K_M.gguf
 mistral-small b84ae96c2b36975beb785f09579b411ea68a83f2eabd37bd17f6b64052e8cb75 https://huggingface.co/bartowski/Mistral-Small-Instruct-2409-GGUF/resolve/main/Mistral-Small-Instruct-2409-Q5_K_M.gguf
+ministral-8b 190766d270e0e13a8ea2d1ff5bc2faae8cf5897736881bd1fd1698651cc82c8b https://huggingface.co/bartowski/Ministral-8B-Instruct-2410-GGUF/resolve/main/Ministral-8B-Instruct-2410-Q5_K_M.gguf
 solar-10b 4ade240f5dcc253272158f3659a56f5b1da8405510707476d23a7df943aa35f7 https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF/resolve/main/solar-10.7b-instruct-v1.0.Q5_K_M.gguf
 starling-7b c67b033bff47e7b8574491c6c296c094e819488d146aca1c6326c10257450b99 https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF/resolve/main/Starling-LM-7B-beta-Q5_K_M.gguf
 command-r da705fbbfceaa128528cb9dd15dc1936adbb11e80d2ef504bf39bf8d0f521e3c https://huggingface.co/bartowski/c4ai-command-r-08-2024-GGUF/resolve/main/c4ai-command-r-08-2024-Q5_K_M.gguf

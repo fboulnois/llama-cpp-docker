@@ -50,6 +50,6 @@ higher the ELO rating the better the model.
 | Target | Model | Parameters | Size | [~Score](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 | gemma-2-9b | [`gemma-2-9b-it`](https://huggingface.co/bartowski/gemma-2-9b-it-GGUF) | 9B | 6.65 GB | 28.90 | 1187 | Google's best small model |
+| ministral-8b | [`ministral-8b-instruct-2410`](https://huggingface.co/bartowski/Ministral-8B-Instruct-2410-GGUF) | 8B | 5.72 GB | 22.01 | 1182 | Mistral AI's best small model |
 | llama-3-8b | [`meta-llama-3.1-8b-instruct`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 26.59 | 1162 | The overall best small model |
-| mistral-7b | [`mistral-7b-instruct-v0.3`](https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF) | 7B | 5.13 GB | 18.44 | 1072 | The most popular 7B model |
 | phi-3.5-mini | [`phi-3.5-mini-instruct`](https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF) | 3B | 3.14 GB | 27.57 | 1071 | Microsoft's best tiny model |
