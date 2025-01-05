@@ -1,5 +1,21 @@
 # Changelog
 
+## [v1.10.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.9.0...v1.10.0) - 2025-01-04
+
+### Added
+
+* Update command r to 2024-08
+* Sort models alphabetically before output
+* Add qwen2.5 7b 14b 32b
+* Add mistral small 22b
+* Add phi 3.5 mini 3b
+* Update mistral 7b to 0.3
+
+### Changed
+
+* Replace mistral 7b with ministral 8b
+* Remove old llama 2 model from table
+
 ## [v1.9.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.8.0...v1.9.0) - 2024-12-20
 
 ### Added
