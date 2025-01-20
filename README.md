@@ -38,10 +38,10 @@ for the complete list of server options.
 
 The [`docker-entrypoint.sh`](docker-entrypoint.sh) has targets for downloading
 popular models. Run `./docker-entrypoint.sh --help` to list available models.
-Download models by running `./docker-entrypoint.sh <model>` or `make <model>`
-where `<model>` is the name of the model. By default, these will download the
-`_Q5_K_M.gguf` versions of the models. These models are quantized to 5 bits
-which provide a good balance between speed and accuracy.
+Download models by running `./docker-entrypoint.sh <model>` where `<model>` is
+the name of the model. By default, these will download the `_Q5_K_M.gguf`
+versions of the models. These models are quantized to 5 bits which provide a
+good balance between speed and accuracy.
 
 Confused about which model to use? Below is a list of popular models, ranked by
 [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the
