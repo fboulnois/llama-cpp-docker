@@ -13,7 +13,7 @@ used instead.
 
 ```bash
 make build
-make llama-2-13b
+make llama-3-8b
 make up
 ```
 

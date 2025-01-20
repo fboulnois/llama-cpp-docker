@@ -62,7 +62,7 @@ set_default_env_vars() {
     export LLAMA_HOST="0.0.0.0"
   fi
   if [ -z ${LLAMA_MODEL+x} ]; then
-    export LLAMA_MODEL="/models/llama-2-13b-chat.Q5_K_M.gguf"
+    export LLAMA_MODEL="/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf"
   fi
 }
 
