@@ -58,35 +58,13 @@ parse_args_download_model() {
 }
 
 set_default_env_vars() {
-  if [ -z ${LLAMA_HOST+x} ]; then
-    export LLAMA_HOST="0.0.0.0"
+  if [ -z ${LLAMA_ARG_HOST+x} ]; then
+    export LLAMA_ARG_HOST="0.0.0.0"
   fi
-  if [ -z ${LLAMA_MODEL+x} ]; then
-    export LLAMA_MODEL="/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf"
-  fi
-}
-
-convert_llama_env_vars() {
-  LLAMA_ARGS=$(env | grep LLAMA_ | awk '{
-    # for each environment variable
-    for (n = 1; n <= NF; n++) {
-      # replace LLAMA_ prefix with --
-      sub("^LLAMA_", "--", $n)
-      # find first = and split into argument name and value
-      eq = index($n, "=")
-      s1 = tolower(substr($n, 1, eq - 1))
-      s2 = substr($n, eq + 1)
-      # replace _ with - in argument name
-      gsub("_", "-", s1)
-      # print argument name and value
-      print s1 " " s2
-    }
-  }')
 }
 
 parse_args_download_model "$@"
 set_default_env_vars
-convert_llama_env_vars
 
 set -x
-llama-server $LLAMA_ARGS
+llama-server
