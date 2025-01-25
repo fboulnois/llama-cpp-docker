@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.11.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.10.0...v1.11.0) - 2025-01-20
+
+### Added
+
+* Switch to built-in environment variables
+* Switch to llama 3.1 8b as default
+
+### Changed
+
+* Only set target for default model
+
 ## [v1.10.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.9.0...v1.10.0) - 2025-01-04
 
 ### Added
