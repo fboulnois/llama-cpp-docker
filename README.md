@@ -21,15 +21,13 @@ After starting up the chat server will be available at `http://localhost:8080`.
 
 ## Options
 
-Options can be specified as environment variables in the `docker-compose.yml`
-file. Environment variables that are prefixed with `LLAMA_` are converted to
-command line arguments for the `llama.cpp` server. For example, `LLAMA_CTX_SIZE`
-is converted to `--ctx-size`. By default, the following options are set:
+Options are specified as environment variables in the `docker-compose.yml` file.
+By default, the following options are set:
 
 * `GGML_CUDA_NO_PINNED`: Disable pinned memory for compatability (default is 1)
-* `LLAMA_CTX_SIZE`: The context size to use (default is 2048)
-* `LLAMA_MODEL`: The name of the model to use (default is `/models/llama-2-13b-chat.Q5_K_M.gguf`)
-* `LLAMA_N_GPU_LAYERS`: The number of layers to run on the GPU (default is 99)
+* `LLAMA_ARG_CTX_SIZE`: The context size to use (default is 2048)
+* `LLAMA_ARG_MODEL`: The name of the model to use (default is `/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf`)
+* `LLAMA_ARG_N_GPU_LAYERS`: The number of layers to run on the GPU (default is 99)
 
 See the [llama.cpp documentation](https://github.com/ggerganov/llama.cpp/tree/master/examples/server)
 for the complete list of server options.
