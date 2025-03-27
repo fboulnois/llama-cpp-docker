@@ -18,6 +18,8 @@ phi-3-medium 5e9d850d6c899e7fdf39a19cdf6fecae225e0c5bb3d13d6f277cbda508a15f0c ht
 phi-3.5-mini df76b3117fac9fbcce3456b386d0250cbfded9f2e6878207250124d1966e9192 https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF/blob/main/Phi-3.5-mini-instruct-Q6_K.gguf
 gemma-2-9b a4b0b55ce809a09baaefb789b0046ac77ecd502aba8aeb2ed63cc237d9f40ce7 https://huggingface.co/bartowski/gemma-2-9b-it-GGUF/resolve/main/gemma-2-9b-it-Q5_K_M.gguf
 gemma-2-27b fbefa7ddf24b32dee231c40e0bdd55f9a3ef0e64c8559b0cb48b66cce66fe671 https://huggingface.co/bartowski/gemma-2-27b-it-GGUF/resolve/main/gemma-2-27b-it-Q5_K_M.gguf
+gemma-3-12b 13d44e37860489806f575deb0b219c6058c9421fe1982a9311a0e367c4e8f444 https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF/resolve/main/google_gemma-3-12b-it-Q5_K_M.gguf
+gemma-3-27b 7babc9bc281f07edae1cbfe519f61b12daa760b36be8ba53e72ddfdc9eceb846 https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF/resolve/main/google_gemma-3-27b-it-Q5_K_M.gguf
 qwen2.5-7b 2e998d7e181c8756c5ffc55231b9ee1cdc9d3acec4245d6e27d32bd8e738c474 https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF/resolve/main/Qwen2.5-7B-Instruct-Q5_K_M.gguf
 qwen2.5-14b 48ad2dafedac636f62847f5338c356cd21f5cfa6b1e2c885360cb10c890b8cb2 https://huggingface.co/bartowski/Qwen2.5-14B-Instruct-GGUF/resolve/main/Qwen2.5-14B-Instruct-Q5_K_M.gguf
 qwen2.5-32b 371c9d50b4c2db96c7b6695b81a23c03c10a0ee780a8c3fe9193aac148febdaf https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF/resolve/main/Qwen2.5-32B-Instruct-Q5_K_M.gguf
