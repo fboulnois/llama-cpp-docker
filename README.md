@@ -52,3 +52,7 @@ higher the ELO rating the better the model.
 | mistral-small-3 | [`mistral-small-3.1-24b-instruct`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.1-24B-Instruct-2503-GGUF) | 24B | 16.76 GB | 29.92+ | 1214 | Mistral AI's best small model |
 | llama-3-8b | [`meta-llama-3.1-8b-instruct`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 23.76 | 1176 | Meta's best small model |
 | phi-4-mini | [`phi-4-mini-instruct`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 29.41 | 1070++ | Microsoft's best tiny model |
+
+> [!NOTE]
+> Values with `+` are minimum estimates from previous versions of the model due
+> to missing data.
