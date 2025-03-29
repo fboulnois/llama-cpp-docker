@@ -1,6 +1,23 @@
 # Changelog
 
-## [v1.11.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.10.0...v1.11.0) - 2025-01-20
+## [v1.12.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.11.0...v1.12.0) - 2025-03-29
+
+### Added
+
+* Add Phi 4 Mini
+* Add Gemma 3 12b and 27b
+* Add Mistral Small 3.1 24b
+* Add Deepseek R1 Qwen 14b and 32b
+
+### Changed
+
+* Group together similar models
+
+### Fixed
+
+* Remove version from compose files
+
+## [v1.11.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.10.0...v1.11.0) - 2025-01-25
 
 ### Added
 
