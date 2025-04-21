@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y make git cmake clang-16 libomp-16-dev
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && CC=clang-16 CXX=clang++-16 cmake -B build -DBUILD_SHARED_LIBS=off \
+  && CC=clang-16 CXX=clang++-16 cmake -B build -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=off \
   && cmake --build build --config Release -j
 
 FROM debian:12-slim AS env-deploy
