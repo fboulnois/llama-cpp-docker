@@ -5,9 +5,11 @@ HAS_NVIDIA_GPU := $(shell which nvidia-smi >/dev/null && nvidia-smi --query --di
 
 build:
 ifdef HAS_NVIDIA_GPU
-	$(DOCKER) build . --tag $(DIRNAME)
+	$(DOCKER) build --target env-build  . --tag $(DIRNAME)-build
+	$(DOCKER) build --target env-deploy . --tag $(DIRNAME)
 else
-	$(DOCKER) build . --file Dockerfile-cpu --tag $(DIRNAME)
+	$(DOCKER) build --target env-build  . --file Dockerfile-cpu --tag $(DIRNAME)-build
+	$(DOCKER) build --target env-deploy . --file Dockerfile-cpu --tag $(DIRNAME)
 endif
 
 up:
