@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.13.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.12.0...v1.13.0) - 2025-04-21
+
+### Changed
+
+* Split docker images into build and deploy
+
+### Fixed
+
+* Models are predownloaded so disable curl
+
 ## [v1.12.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.11.0...v1.12.0) - 2025-03-29
 
 ### Added
