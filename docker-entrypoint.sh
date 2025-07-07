@@ -24,6 +24,7 @@ gemma-3-27b 7babc9bc281f07edae1cbfe519f61b12daa760b36be8ba53e72ddfdc9eceb846 htt
 qwen2.5-7b 2e998d7e181c8756c5ffc55231b9ee1cdc9d3acec4245d6e27d32bd8e738c474 https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF/resolve/main/Qwen2.5-7B-Instruct-Q5_K_M.gguf
 qwen2.5-14b 48ad2dafedac636f62847f5338c356cd21f5cfa6b1e2c885360cb10c890b8cb2 https://huggingface.co/bartowski/Qwen2.5-14B-Instruct-GGUF/resolve/main/Qwen2.5-14B-Instruct-Q5_K_M.gguf
 qwen2.5-32b 371c9d50b4c2db96c7b6695b81a23c03c10a0ee780a8c3fe9193aac148febdaf https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF/resolve/main/Qwen2.5-32B-Instruct-Q5_K_M.gguf
+deepseek-r1-qwen-8b 5842a7d03f76cf11a418447ef63f12750dc340430ac8a330a6faa8fe8ddc8040 https://huggingface.co/bartowski/deepseek-ai_DeepSeek-R1-0528-Qwen3-8B-GGUF/resolve/main/deepseek-ai_DeepSeek-R1-0528-Qwen3-8B-Q5_K_M.gguf
 deepseek-r1-qwen-14b 3eea644370914aebfff274dd8f5a790aaee42ba69a1ce09051eeaad0f05afd32 https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-14B-Q5_K_M.gguf
 deepseek-r1-qwen-32b 9f345fb6721d413669afad82154b177cb45e333f49926e38c3586f01c37dfcca https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf
 EOF
