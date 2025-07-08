@@ -47,11 +47,11 @@ higher the ELO rating the better the model.
 
 | Target | Model | Parameters | Size | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- |
-| deepseek-r1-qwen-14b | [`deepseek-r1-distill-qwen-14b`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1360 | The best small thinking model |
-| gemma-3-27b | [`gemma-3-27b-it`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1339 | Google's best medium model |
-| mistral-small-3 | [`mistral-small-3.1-24b-instruct`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.1-24B-Instruct-2503-GGUF) | 24B | 16.76 GB | 1214 | Mistral AI's best small model |
-| llama-3-8b | [`meta-llama-3.1-8b-instruct`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1176 | Meta's best small model |
-| phi-4-mini | [`phi-4-mini-instruct`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1070++ | Microsoft's best tiny model |
+| deepseek-r1-qwen-14b | [`deepseek-r1-distill-qwen-14b`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | The best small thinking model |
+| gemma-3-27b | [`gemma-3-27b-it`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1361 | Google's best medium model |
+| mistral-small-3 | [`mistral-small-3.2-24b-instruct`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF) | 24B | 16.76 GB | 1273 | Mistral AI's best small model |
+| llama-3-8b | [`meta-llama-3.1-8b-instruct`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1193 | Meta's best small model |
+| phi-4-mini | [`phi-4-mini-instruct`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1088++ | Microsoft's best tiny model |
 
 > [!NOTE]
 > Values with `+` are minimum estimates from previous versions of the model due
