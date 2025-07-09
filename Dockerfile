@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.6.3-devel-ubuntu22.04 AS env-build
+FROM nvidia/cuda:12.9.1-devel-ubuntu24.04 AS env-build
 
 WORKDIR /srv
 
@@ -10,7 +10,7 @@ RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cmake -B build -DGGML_CUDA=on -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=off \
   && cmake --build build --config Release -j
 
-FROM debian:12-slim AS env-deploy
+FROM ubuntu:24.04 AS env-deploy
 
 # copy openmp and cuda libraries
 ENV LD_LIBRARY_PATH=/usr/local/lib
