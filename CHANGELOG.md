@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.14.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.13.0...v1.14.0) - 2025-07-09
+
+### Added
+
+* Update nvidia/cuda to 12.9.1
+* Add Deepseek R1 Qwen 8b
+* Update to Mistral Small 3.2 24b
+
 ## [v1.13.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.12.0...v1.13.0) - 2025-04-21
 
 ### Changed
