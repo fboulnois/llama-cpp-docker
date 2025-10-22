@@ -1,20 +1,20 @@
-FROM debian:12-slim AS env-build
+FROM ubuntu:24.04 AS env-build
 
 WORKDIR /srv
 
 # install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y make git cmake clang-16 libomp-16-dev
+RUN apt-get update && apt-get install -y make git cmake clang-19 libomp-19-dev
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && CC=clang-16 CXX=clang++-16 cmake -B build -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=off \
+  && CC=clang-19 CXX=clang++-19 cmake -B build -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=off \
   && cmake --build build --config Release -j
 
-FROM debian:12-slim AS env-deploy
+FROM ubuntu:24.04 AS env-deploy
 
 # copy openmp libraries
 ENV LD_LIBRARY_PATH=/usr/local/lib
-COPY --from=0 /usr/lib/llvm-16/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
+COPY --from=0 /usr/lib/llvm-19/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
 
 # copy llama.cpp binaries
 COPY --from=0 /srv/llama.cpp/build/bin/llama-cli /usr/local/bin/llama-cli
