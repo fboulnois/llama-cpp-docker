@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.15.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.14.0...v1.15.0) - 2025-10-23
+
+### Added
+
+* Standardize on ubuntu 24.04
+
 ## [v1.14.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.13.0...v1.14.0) - 2025-07-09
 
 ### Added
