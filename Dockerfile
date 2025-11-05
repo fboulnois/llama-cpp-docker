@@ -1,4 +1,4 @@
-FROM nvidia/cuda:12.9.1-devel-ubuntu24.04 AS env-build
+FROM nvidia/cuda:13.0.2-devel-ubuntu24.04 AS env-build
 
 WORKDIR /srv
 
