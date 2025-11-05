@@ -2,7 +2,6 @@ services:
   llama:
     image: llama-cpp-docker
     environment:
-      - GGML_CUDA_NO_PINNED=1
       - LLAMA_ARG_CTX_SIZE=2048
       - LLAMA_ARG_MODEL=/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
       - LLAMA_ARG_N_GPU_LAYERS=99
