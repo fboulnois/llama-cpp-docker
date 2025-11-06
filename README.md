@@ -21,7 +21,7 @@ After starting up the chat server will be available at `http://localhost:8080`.
 Options are specified as environment variables in the `docker-compose.yml` file. By default, the following options are set:
 
 * `LLAMA_ARG_CTX_SIZE`: The context size to use (default is 2048)
-* `LLAMA_ARG_MODEL`: The name of the model to use (default is `/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf`)
+* `LLAMA_ARG_HF_REPO`: The repository and quantization of the HuggingFace model to use (default is `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:q5_k_m`)
 * `LLAMA_ARG_N_GPU_LAYERS`: The number of layers to run on the GPU (default is 99)
 
 See the [llama.cpp documentation](https://github.com/ggml-org/llama.cpp/tree/master/tools/server) for the complete list of server options.
