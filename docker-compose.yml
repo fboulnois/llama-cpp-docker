@@ -3,7 +3,7 @@ services:
     image: llama-cpp-docker
     environment:
       - LLAMA_ARG_CTX_SIZE=2048
-      - LLAMA_ARG_MODEL=/models/Meta-Llama-3.1-8B-Instruct-Q5_K_M.gguf
+      - LLAMA_ARG_HF_REPO=bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:q5_k_m
       - LLAMA_ARG_N_GPU_LAYERS=99
     volumes:
       - ./models:/models
