@@ -70,8 +70,15 @@ set_default_env_vars() {
   fi
 }
 
+set_cache_permissions() {
+  UID=$(id -u llama)
+  chown -R "$UID:$UID" /home/llama/.cache
+  chmod 1777 /home/llama/.cache
+}
+
 parse_args_download_model "$@"
 set_default_env_vars
+set_cache_permissions
 
 set -x
-llama-server
+exec gosu "$UID:$UID" llama-server
