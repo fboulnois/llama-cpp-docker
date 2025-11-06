@@ -2,22 +2,48 @@ FROM nvidia/cuda:13.0.2-devel-ubuntu24.04 AS env-build
 
 WORKDIR /srv
 
-# install build tools and clone and compile llama.cpp
-RUN apt-get update && apt-get install -y build-essential git libgomp1 cmake
+# install build tools and dependencies
+RUN apt-get update && apt-get install -y make git cmake clang-19 libomp-19-dev \
+  curl ca-certificates libssl-dev zlib1g-dev xz-utils
+
+ARG CC=clang-19
+ARG CXX=clang++-19
+ARG CURL_VERSION=8.16.0
+
+# build static libcurl for llama.cpp
+RUN curl -LO https://curl.se/download/curl-${CURL_VERSION}.tar.xz \
+  && tar -xf curl-${CURL_VERSION}.tar.xz \
+  && cd curl-${CURL_VERSION} \
+  && ./configure --prefix=/usr/local --disable-shared --enable-static \
+    --with-openssl --with-zlib --disable-manual \
+    --without-libpsl --without-nghttp2 --without-brotli --without-zstd \
+    --disable-dict --disable-file --disable-ftp --disable-gopher \
+    --disable-imap --disable-ipfs --disable-ldap --disable-mqtt --disable-pop3 \
+    --disable-rtsp --disable-smb --disable-smtp --disable-telnet --disable-tftp \
+  && make -j"$(nproc)" \
+  && make install
+
+# clone and compile llama.cpp
+ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+ENV LDFLAGS="-L/usr/local/lib -lssl -lcrypto -lz"
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && cmake -B build -DGGML_CUDA=on -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=off \
+  && cmake -B build -DGGML_CUDA=on -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=on \
   && cmake --build build --config Release -j
 
 FROM ubuntu:24.04 AS env-deploy
 
+# install gosu to run as nonroot and ca-certificates to download models
+RUN apt-get update && apt-get install -y gosu ca-certificates \
+  && rm -rf /var/lib/apt/lists/*
+
 # copy openmp and cuda libraries
 ENV LD_LIBRARY_PATH=/usr/local/lib
-COPY --from=0 /usr/lib/x86_64-linux-gnu/libgomp.so.1 ${LD_LIBRARY_PATH}/libgomp.so.1
-COPY --from=0 /usr/local/cuda/lib64/libcublas.so.12 ${LD_LIBRARY_PATH}/libcublas.so.12
-COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.12 ${LD_LIBRARY_PATH}/libcublasLt.so.12
-COPY --from=0 /usr/local/cuda/lib64/libcudart.so.12 ${LD_LIBRARY_PATH}/libcudart.so.12
+COPY --from=0 /usr/lib/llvm-19/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
+COPY --from=0 /usr/local/cuda/lib64/libcublas.so.13 ${LD_LIBRARY_PATH}/libcublas.so.13
+COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.13 ${LD_LIBRARY_PATH}/libcublasLt.so.13
+COPY --from=0 /usr/local/cuda/lib64/libcudart.so.13 ${LD_LIBRARY_PATH}/libcudart.so.13
 
 # copy llama.cpp binaries
 COPY --from=0 /srv/llama.cpp/build/bin/llama-cli /usr/local/bin/llama-cli
@@ -25,8 +51,6 @@ COPY --from=0 /srv/llama.cpp/build/bin/llama-server /usr/local/bin/llama-server
 
 # create llama user and set home directory
 RUN useradd --system --create-home llama
-
-USER llama
 
 WORKDIR /home/llama
 
