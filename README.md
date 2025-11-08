@@ -10,7 +10,6 @@ By default, the service requires a CUDA capable GPU with at least 8GB+ of VRAM. 
 
 ```bash
 make build
-make llama-3-8b
 make up
 ```
 

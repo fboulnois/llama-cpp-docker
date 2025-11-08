@@ -6,7 +6,6 @@ services:
       - LLAMA_ARG_HF_REPO=bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:q5_k_m
       - LLAMA_ARG_N_GPU_LAYERS=99
     volumes:
-      - ./models:/models
       - data:/home/llama/.cache
     ports:
       - target: 8080
