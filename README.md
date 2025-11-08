@@ -28,17 +28,17 @@ See the [llama.cpp documentation](https://github.com/ggml-org/llama.cpp/tree/mas
 
 ## Models
 
-The [`docker-entrypoint.sh`](docker-entrypoint.sh) has targets for downloading popular models. Run `./docker-entrypoint.sh --help` to list available models. Download models by running `./docker-entrypoint.sh <model>` where `<model>` is the name of the model. By default, these will download the `_Q5_K_M.gguf` versions of the models. These models are quantized to 5 bits which provide a good balance between speed and accuracy.
+Use the `LLAMA_ARG_HF_REPO` environment variable to automatically download and use a model from HuggingFace. The format is `<huggingface-repository><:quant>` where `<:quant>` is optional and specifies the quantization to use. For example, to download a model from `https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF` with no quantization, set the variable to `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`. To use the same model with `q5_k_m` quantization, set the variable to `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:q5_k_m`. Models must be in the GGUF format, which is the default format for `llama.cpp` models. Models quantized with `q5_k_m` are recommended for a good balance between speed and accuracy. To list popular models, run `./docker-entrypoint.sh --help`.
 
-Confused about which model to use? Below is a list of popular models, ranked by [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the higher the ELO rating the better the model.
+Confused about which model to use? Below is a list of top popular models, ranked by [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the higher the ELO rating the better the model. Set `LLAMA_ARG_HF_REPO` to the repository name to use a specific model.
 
-| Target | Model | Parameters | Size | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
+| Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- |
-| deepseek-r1-qwen-14b | [`deepseek-r1-distill-qwen-14b`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | The best small thinking model |
-| gemma-3-27b | [`gemma-3-27b-it`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1361 | Google's best medium model |
-| mistral-small-3 | [`mistral-small-3.2-24b-instruct`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF) | 24B | 16.76 GB | 1273 | Mistral AI's best small model |
-| llama-3-8b | [`meta-llama-3.1-8b-instruct`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1193 | Meta's best small model |
-| phi-4-mini | [`phi-4-mini-instruct`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1088++ | Microsoft's best tiny model |
+| deepseek-r1-distill-qwen-14b | [`bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | The best small thinking model |
+| gemma-3-27b | [`bartowski/google_gemma-3-27b-it-GGUF`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1361 | Google's best medium model |
+| mistral-small-3.2-24b | [`bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF) | 24B | 16.76 GB | 1273 | Mistral AI's best small model |
+| llama-3.1-8b | [`bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1193 | Meta's best small model |
+| phi-4-mini | [`bartowski/microsoft_Phi-4-mini-instruct-GGUF`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1088++ | Microsoft's best tiny model |
 
 > [!NOTE]
 > Values with `+` are minimum estimates from previous versions of the model due to missing data.
