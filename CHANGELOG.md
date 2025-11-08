@@ -1,5 +1,20 @@
 # Changelog
 
+## [v2.0.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.15.0...v2.0.0) - 2025-11-08
+
+### Added
+
+* Switch to using downloaded huggingface models
+* Switch to using huggingface model directly
+* Include static build of curl to download models
+* Update nvidia/cuda to 13.0.2
+
+### Changed
+
+* Remove rarely used models
+* Remove manual downloads of models
+* Enable pinned cuda memory by default
+
 ## [v1.15.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.14.0...v1.15.0) - 2025-10-23
 
 ### Added
