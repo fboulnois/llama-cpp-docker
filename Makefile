@@ -21,6 +21,3 @@ endif
 
 down:
 	$(DOCKER) compose down
-
-llama-3-8b:
-	cd models && ../docker-entrypoint.sh $@
