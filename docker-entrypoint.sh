@@ -10,9 +10,6 @@ https://huggingface.co/bartowski/Mistral-7B-Instruct-v0.3-GGUF
 https://huggingface.co/bartowski/Mistral-Small-Instruct-2409-GGUF
 https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF
 https://huggingface.co/bartowski/Ministral-8B-Instruct-2410-GGUF
-https://huggingface.co/TheBloke/SOLAR-10.7B-Instruct-v1.0-GGUF
-https://huggingface.co/bartowski/Starling-LM-7B-beta-GGUF
-https://huggingface.co/bartowski/c4ai-command-r-08-2024-GGUF
 https://huggingface.co/bartowski/Phi-3-mini-4k-instruct-GGUF
 https://huggingface.co/bartowski/Phi-3-medium-4k-instruct-GGUF
 https://huggingface.co/bartowski/Phi-3.5-mini-instruct-GGUF
