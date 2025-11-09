@@ -35,7 +35,7 @@ Models must be in the GGUF format, which is the default format for `llama.cpp` m
 
 Confused about which model to use? Below is a list of top popular models, ranked by [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the higher the ELO rating the better the model. Set `LLAMA_ARG_HF_REPO` to the repository name to use a specific model.
 
-| Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://chat.lmsys.org/?leaderboard) | Notes |
+| Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://lmarena.ai/leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- |
 | deepseek-r1-distill-qwen-14b | [`bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | The best small thinking model |
 | gemma-3-27b | [`bartowski/google_gemma-3-27b-it-GGUF`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1361 | Google's best medium model |
