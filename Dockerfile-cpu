@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y make git cmake clang-19 libomp-19-dev \
 
 ARG CC=clang-19
 ARG CXX=clang++-19
-ARG CURL_VERSION=8.16.0
+ARG CURL_VERSION=8.17.0
 
 # build static libcurl for llama.cpp
 RUN curl -LO https://curl.se/download/curl-${CURL_VERSION}.tar.xz \
