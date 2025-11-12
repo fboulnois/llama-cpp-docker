@@ -1,5 +1,12 @@
 # Changelog
 
+## [v2.1.0](https://github.com/fboulnois/llama-cpp-docker/compare/v2.0.0...v2.1.0) - 2025-11-11
+
+### Added
+
+* Update curl to 8.17.0
+* Add qwen3 and magistral models
+
 ## [v2.0.0](https://github.com/fboulnois/llama-cpp-docker/compare/v1.15.0...v2.0.0) - 2025-11-08
 
 ### Added
