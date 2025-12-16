@@ -38,9 +38,9 @@ Confused about which model to use? Below is a list of top popular models, ranked
 | Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://lmarena.ai/leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- |
 | qwen3-30b-a3b-instruct-2507 | [`bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF`](https://huggingface.co/bartowski/Qwen_Qwen3-30B-A3B-Instruct-2507-GGUF) | 30B | 21.74 GB | 1437 | Qwen's best medium model |
+| ministral-3-14b-instruct-2512 | [`bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF`](https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF) | 14B | 9.62 GB | 1410 | Mistral AI's best small model |
 | deepseek-r1-distill-qwen-14b | [`bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | Deepseek's best small thinking model |
 | gemma-3-27b | [`bartowski/google_gemma-3-27b-it-GGUF`](https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF) | 27B | 19.27 GB | 1365 | Google's best medium model |
-| mistral-small-3.2-24b | [`bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF`](https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF) | 24B | 16.76 GB | 1354 | Mistral AI's best small model |
 | llama-3.1-8b | [`bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1211 | Meta's best small model |
 | phi-4-mini | [`bartowski/microsoft_Phi-4-mini-instruct-GGUF`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1198++ | Microsoft's best tiny model |
 
