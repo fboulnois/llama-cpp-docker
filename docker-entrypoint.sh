@@ -6,9 +6,11 @@ set -eu
 MODEL_LIST=$(cat << EOF
 https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF
 https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF
-https://huggingface.co/bartowski/mistralai_Mistral-Small-3.2-24B-Instruct-2506-GGUF
 https://huggingface.co/bartowski/mistralai_Magistral-Small-2509-GGUF
-https://huggingface.co/bartowski/Ministral-8B-Instruct-2410-GGUF
+https://huggingface.co/bartowski/mistralai_Ministral-3-8B-Instruct-2512-GGUF
+https://huggingface.co/bartowski/mistralai_Ministral-3-8B-Reasoning-2512-GGUF
+https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF
+https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Reasoning-2512-GGUF
 https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF
 https://huggingface.co/bartowski/google_gemma-3-12b-it-GGUF
 https://huggingface.co/bartowski/google_gemma-3-27b-it-GGUF
