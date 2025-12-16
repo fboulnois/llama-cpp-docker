@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.2.0](https://github.com/fboulnois/llama-cpp-docker/compare/v2.1.1...v2.2.0) - 2025-12-16
+
+### Added
+
+* Update mistral models to ministral 3
+
 ## [v2.1.1](https://github.com/fboulnois/llama-cpp-docker/compare/v2.1.0...v2.1.1) - 2025-11-30
 
 ### Changed
