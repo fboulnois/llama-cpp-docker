@@ -42,7 +42,6 @@ Confused about which model to use? Below is a list of top popular models, ranked
 | ministral-3-14b-instruct-2512 | [`bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF`](https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF) | 14B | 9.62 GB | 1410 | Mistral AI's best small model |
 | deepseek-r1-distill-qwen-14b | [`bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF`](https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-14B-GGUF) | 14B | 10.5 GB | 1375 | Deepseek's best small thinking model |
 | llama-3.1-8b | [`bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`](https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF) | 8B | 5.73 GB | 1211 | Meta's best small model |
-| phi-4-mini | [`bartowski/microsoft_Phi-4-mini-instruct-GGUF`](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF) | 4B | 2.85 GB | 1198++ | Microsoft's best tiny model |
 
 > [!NOTE]
 > Values with `+` are minimum estimates from previous versions of the model due to missing data.
