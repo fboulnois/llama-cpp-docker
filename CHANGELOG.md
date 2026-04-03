@@ -1,5 +1,20 @@
 # Changelog
 
+## [v3.0.0](https://github.com/fboulnois/llama-cpp-docker/compare/v2.2.0...v3.0.0) - 2026-04-03
+
+### Added
+
+* Switch makefile and entrypoint to docker-task
+* Update to clang 20
+* Add tty to docker-compose
+* Replace curl with openssl
+* Add gemma 4 and qwen3.5
+
+### Changed
+
+* Rename to preserve syntax highlighting
+* Remove microsoft phi 4
+
 ## [v2.2.0](https://github.com/fboulnois/llama-cpp-docker/compare/v2.1.1...v2.2.0) - 2025-12-16
 
 ### Added
