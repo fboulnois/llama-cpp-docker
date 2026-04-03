@@ -43,6 +43,6 @@ WORKDIR /home/llama
 EXPOSE 8080
 
 # copy and set entrypoint script
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY docker-task /usr/local/bin/docker-task
 
-ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/usr/local/bin/docker-task", "entrypoint" ]

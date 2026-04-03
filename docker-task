@@ -2,7 +2,6 @@
 
 set -eu
 
-# model urls
 MODEL_LIST=$(cat << EOF
 https://huggingface.co/TheBloke/Llama-2-13B-chat-GGUF
 https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF
@@ -26,6 +25,22 @@ https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF
 EOF
 )
 
+use_sudo() {
+  if command -v docker > /dev/null 2>&1 && docker ps 2>&1 | grep -q "permission denied"; then
+    DOCKER="sudo docker"
+  else
+    DOCKER="docker"
+  fi
+}
+
+has_nvidia_gpu() {
+  if command -v nvidia-smi > /dev/null 2>&1 && nvidia-smi --query --display=COMPUTE > /dev/null 2>&1; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 usage() {
   MODEL_NAMES=$(echo "$MODEL_LIST" | sed 's|https://huggingface.co/||' | sort)
   cat << EOF
@@ -37,12 +52,12 @@ Popular models to download and use:
 $MODEL_NAMES
 
 EOF
+  exit 0
 }
 
 parse_args_check_docker() {
   if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
     usage
-    exit 0
   fi
 }
 
@@ -58,9 +73,53 @@ set_cache_permissions() {
   chmod 1777 /home/llama/.cache
 }
 
-parse_args_check_docker "$@"
-set_default_env_vars
-set_cache_permissions
+docker_entrypoint() {
+  parse_args_check_docker
+  set_default_env_vars
+  set_cache_permissions
 
-set -x
-exec gosu "$UID:$UID" llama-server
+  set -x
+  exec gosu "$UID:$UID" llama-server
+}
+
+docker_build() {
+  DIRNAME=$(basename "$PWD")
+  if has_nvidia_gpu; then
+    $DOCKER build --target env-build  . --tag "${DIRNAME}-build"
+	  $DOCKER build --target env-deploy . --tag "${DIRNAME}"
+  else
+    $DOCKER build --target env-build  . --file Dockerfile.cpu --tag "${DIRNAME}-build"
+	  $DOCKER build --target env-deploy . --file Dockerfile.cpu --tag "${DIRNAME}"
+  fi
+}
+
+docker_opt() {
+  if has_nvidia_gpu; then
+    $DOCKER compose --file docker-compose.yml --file docker-compose.gpu.yml "$1"
+  else
+    $DOCKER compose --file docker-compose.yml "$1"
+  fi
+}
+
+docker_up() {
+  docker_opt up
+}
+
+docker_down() {
+  docker_opt down
+}
+
+use_sudo
+
+if [ -z "${1+:}" ]; then
+  usage
+fi
+
+case $1 in
+  entrypoint) docker_entrypoint ;;
+  build) docker_build ;;
+  up) docker_up ;;
+  down) docker_down ;;
+  --help|-h) usage ;;
+  *) echo "Unknown command: $1"; exit 1 ;;
+esac
