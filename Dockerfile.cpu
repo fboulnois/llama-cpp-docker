@@ -8,20 +8,6 @@ RUN apt-get update && apt-get install -y make git cmake clang-19 libomp-19-dev \
 
 ARG CC=clang-19
 ARG CXX=clang++-19
-ARG CURL_VERSION=8.17.0
-
-# build static libcurl for llama.cpp
-RUN curl -LO https://curl.se/download/curl-${CURL_VERSION}.tar.xz \
-  && tar -xf curl-${CURL_VERSION}.tar.xz \
-  && cd curl-${CURL_VERSION} \
-  && ./configure --prefix=/usr/local --disable-shared --enable-static \
-    --with-openssl --with-zlib --disable-manual \
-    --without-libpsl --without-nghttp2 --without-brotli --without-zstd \
-    --disable-dict --disable-file --disable-ftp --disable-gopher \
-    --disable-imap --disable-ipfs --disable-ldap --disable-mqtt --disable-pop3 \
-    --disable-rtsp --disable-smb --disable-smtp --disable-telnet --disable-tftp \
-  && make -j"$(nproc)" \
-  && make install
 
 # clone and compile llama.cpp
 ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
@@ -29,7 +15,7 @@ ENV LDFLAGS="-L/usr/local/lib -lssl -lcrypto -lz"
 
 RUN git clone https://github.com/ggerganov/llama.cpp.git \
   && cd llama.cpp \
-  && cmake -B build -DBUILD_SHARED_LIBS=off -DLLAMA_CURL=on \
+  && cmake -B build -DBUILD_SHARED_LIBS=off -DLLAMA_OPENSSL=on \
   && cmake --build build --config Release -j
 
 FROM ubuntu:24.04 AS env-deploy
