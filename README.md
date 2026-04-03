@@ -35,7 +35,7 @@ Models must be in the GGUF format, which is the default format for `llama.cpp` m
 
 Confused about which model to use? Below is a list of top popular models, ranked by [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the higher the ELO rating the better the model. Set `LLAMA_ARG_HF_REPO` to the repository name to use a specific model.
 
-| Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://lmarena.ai/leaderboard) | Notes |
+| Model | Repository | Parameters | Q5_K_M Size | [~ELO](https://arena.ai/leaderboard) | Notes |
 | --- | --- | --- | --- | --- | --- |
 | gemma-4-31b | [`bartowski/google_gemma-4-31B-it-GGUF`](https://huggingface.co/bartowski/google_gemma-4-31B-it-GGUF) | 31B | 22.61 GB | 1452 | Google's best medium model |
 | qwen3.5-27b | [`bartowski/Qwen_Qwen3.5-27B-GGUF`](https://huggingface.co/bartowski/Qwen_Qwen3.5-27B-GGUF) | 27B | 19.95 GB | 1437 | Qwen's best medium model |
