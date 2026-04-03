@@ -9,8 +9,8 @@ By default, the service requires a CUDA capable GPU with at least 8GB+ of VRAM. 
 ## Quickstart
 
 ```bash
-make build
-make up
+./docker-task build
+./docker-task up
 ```
 
 After starting up the chat server will be available at `http://localhost:8080`.
@@ -31,7 +31,7 @@ Use the `LLAMA_ARG_HF_REPO` environment variable to automatically download and u
 
 The format is `<huggingface-repository><:quant>` where `<:quant>` is optional and specifies the quantization to use. For example, to download a model from `https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF` with no quantization, set the variable to `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`. To use the same model with `q5_k_m` quantization, set the variable to `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF:q5_k_m`.
 
-Models must be in the GGUF format, which is the default format for `llama.cpp` models. Models quantized with `q5_k_m` are recommended for a good balance between speed and accuracy. To list popular models, run `./docker-entrypoint.sh --help`.
+Models must be in the GGUF format, which is the default format for `llama.cpp` models. Models quantized with `q5_k_m` are recommended for a good balance between speed and accuracy. To list popular models, run `./docker-task --help`.
 
 Confused about which model to use? Below is a list of top popular models, ranked by [ELO rating](https://en.wikipedia.org/wiki/Elo_rating_system). Generally, the higher the ELO rating the better the model. Set `LLAMA_ARG_HF_REPO` to the repository name to use a specific model.
 
