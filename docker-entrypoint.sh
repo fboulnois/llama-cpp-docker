@@ -11,7 +11,6 @@ https://huggingface.co/bartowski/mistralai_Ministral-3-8B-Instruct-2512-GGUF
 https://huggingface.co/bartowski/mistralai_Ministral-3-8B-Reasoning-2512-GGUF
 https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Instruct-2512-GGUF
 https://huggingface.co/bartowski/mistralai_Ministral-3-14B-Reasoning-2512-GGUF
-https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF
 https://huggingface.co/bartowski/google_gemma-4-26B-A4B-it-GGUF
 https://huggingface.co/bartowski/google_gemma-4-31B-it-GGUF
 https://huggingface.co/bartowski/Qwen_Qwen3.5-0.8B-GGUF
