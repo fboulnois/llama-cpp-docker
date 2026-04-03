@@ -3,11 +3,11 @@ FROM nvidia/cuda:13.0.2-devel-ubuntu24.04 AS env-build
 WORKDIR /srv
 
 # install build tools and dependencies
-RUN apt-get update && apt-get install -y make git cmake clang-19 libomp-19-dev \
+RUN apt-get update && apt-get install -y make git cmake clang-20 libomp-20-dev \
   curl ca-certificates libssl-dev zlib1g-dev xz-utils
 
-ARG CC=clang-19
-ARG CXX=clang++-19
+ARG CC=clang-20
+ARG CXX=clang++-20
 
 # clone and compile llama.cpp
 ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install -y gosu ca-certificates \
 
 # copy openmp and cuda libraries
 ENV LD_LIBRARY_PATH=/usr/local/lib
-COPY --from=0 /usr/lib/llvm-19/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
+COPY --from=0 /usr/lib/llvm-20/lib/libomp.so.5 ${LD_LIBRARY_PATH}/libomp.so.5
 COPY --from=0 /usr/local/cuda/lib64/libcublas.so.13 ${LD_LIBRARY_PATH}/libcublas.so.13
 COPY --from=0 /usr/local/cuda/lib64/libcublasLt.so.13 ${LD_LIBRARY_PATH}/libcublasLt.so.13
 COPY --from=0 /usr/local/cuda/lib64/libcudart.so.13 ${LD_LIBRARY_PATH}/libcudart.so.13
